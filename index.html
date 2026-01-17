@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Controle</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg,#66ff00 50%,#000 50%);
+      min-height:100vh;
+      margin:0;
+      padding:20px;
+      color:#fff;
+    }
+    .box{
+      background:rgba(0,0,0,.75);
+      padding:15px;
+      border-radius:10px;
+      max-width:420px;
+      margin-bottom:15px;
+    }
+    input, select, button{
+      width:100%;
+      padding:10px;
+      margin-top:8px;
+      border:none;
+      border-radius:6px;
+    }
+    button{
+      background:#66ff00;
+      color:#000;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    button:hover{background:#4fd600}
+    ul{padding-left:18px}
+  </style>
+</head>
+
+<body>
+
+<h1>Dashboard</h1>
+
+<div class="box">
+  <p>🚗 Carros: <b><span id="carros">0</span></b></p>
+  <p>💰 Faturamento: R$ <b><span id="faturamento">0</span></b></p>
+  <p>💸 Despesas: R$ <b><span id="despesas">0</span></b></p>
+  <p>📈 Lucro: R$ <b><span id="lucro">0</span></b></p>
+
+  <select id="filtro">
+    <option value="total">Total</option>
+    <option value="hoje">Hoje</option>
+    <option value="mes">Este mês</option>
+  </select>
+</div>
+
+<div class="box">
+  <h2>Registrar Lavagem</h2>
+  <input type="number" id="valorLavagem" placeholder="Valor da lavagem">
+  <button onclick="registrarLavagem()">Salvar lavagem</button>
+</div>
+
+<div class="box">
+  <h2>Registrar Despesa</h2>
+  <input type="number" id="valorDespesa" placeholder="Valor da despesa">
+  <button onclick="registrarDespesa()">Salvar despesa</button>
+</div>
+
+<div class="box">
+  <h2>Lavagens</h2>
+  <ul id="listaLavagens"></ul>
+</div>
+
+<div class="box">
+  <h2>Despesas</h2>
+  <ul id="listaDespesas"></ul>
+</div>
+
+<div class="box">
+  <button onclick="apagarTudo()">🗑️ Apagar tudo</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
